@@ -1,1 +1,6 @@
 My VIM configuration.
+You may have to do
+
+echo "runtime vimrc" > .vimrc
+
+for proper running.
