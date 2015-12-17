@@ -10,6 +10,11 @@ set wildmenu
 " show line numbers
 set number
 
+" tab management
+set expandtab
+set shiftwidth=4
+set smarttab
+
 " enable hidden buffers mode
 set hidden
 
