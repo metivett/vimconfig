@@ -3,6 +3,9 @@ execute pathogen#infect()
 let NERDTreeHijackNetrw=1
 filetype plugin on
 
+" command-t options
+let g:CommandTMaxFiles=50000
+
 " bash-like tab completion
 set wildmode=longest,list,full
 set wildmenu
@@ -15,6 +18,9 @@ set expandtab
 set shiftwidth=4
 set smarttab
 
+" indentation
+filetype plugin indent on
+
 " enable hidden buffers mode
 set hidden
 
@@ -23,6 +29,10 @@ nnoremap <F5> :buffers<CR>:buffer<Space>
 
 " autoread mode
 set autoread
+
+" shortcut to scroll inactive split window
+nmap <a-j> <c-w>w<c-e><c-w>w
+nmap <a-k> <c-w>w<c-y><c-w>w
 
 " colortheme
 syntax enable
