@@ -5,6 +5,10 @@ filetype plugin on
 
 " command-t options
 let g:CommandTMaxFiles=50000
+let g:CommandTTraverseSCM='dir'
+
+" ctrlp setup
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " bash-like tab completion
 set wildmode=longest,list,full
