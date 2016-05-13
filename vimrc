@@ -6,8 +6,14 @@ filetype plugin on
 " vim-latex options
 let g:tex_flavor='latex'
 set grepprg=grep\ -nH\ $*
+imap <C-space> <Plug>IMAP_JumpForward
+nmap <C-space> <Plug>IMAP_JumpForward
+vmap <C-space> <Plug>IMAP_JumpForward
+autocmd Filetype tex setlocal tw=80
 
 " command-t options
+nnoremap <silent> <Leader>j :CommandTTag<CR>
+nnoremap <silent> <Leader>p :CommandT %:p:h<CR>
 let g:CommandTMaxFiles=50000
 let g:CommandTTraverseSCM='dir'
 
@@ -37,6 +43,16 @@ set hidden
 
 " map F5 to manage buffers
 nnoremap <F5> :buffers<CR>:buffer<Space>
+
+" See unsaved changes
+function! s:DiffWithSaved()
+    let filetype=&ft
+    diffthis
+    vnew | r # | normal! 1Gdd
+    diffthis
+    exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
+endfunction
+com! DiffSaved call s:DiffWithSaved()
 
 " autoread mode
 set autoread
