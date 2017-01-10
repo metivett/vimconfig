@@ -19,6 +19,19 @@ let g:CommandTTraverseSCM='dir'
 
 " look for tags file
 set tags=tags;/
+set tags+=~/.vim/tags/cpp
+" OmniCppComplete
+let OmniCpp_NamespaceSearch = 1
+let OmniCpp_GlobalScopeSearch = 1
+let OmniCpp_ShowAccess = 1
+let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
+let OmniCpp_MayCompleteDot = 0 " autocomplete after .
+let OmniCpp_MayCompleteArrow = 0 " autocomplete after ->
+let OmniCpp_MayCompleteScope = 0 " autocomplete after ::
+let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
+" automatically open and close the popup menu / preview window
+au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
+set completeopt=menuone,menu,longest,preview
 
 " ctrlp setup
 set runtimepath^=~/.vim/bundle/ctrlp.vim
@@ -61,7 +74,17 @@ set autoread
 nmap <a-j> <c-w>w<c-e><c-w>w
 nmap <a-k> <c-w>w<c-y><c-w>w
 
+" map S-Enter to edit line above in insert mode (using iterm2 remapping
+" S-Enter to ✠
+inoremap ✠ <C-O>O
+inoremap <S-CR> <C-O>O
+
 " colortheme
 syntax enable
 set background=dark
 colorscheme solarized
+let g:solarized_diffmode="high"
+if &diff
+    colorscheme solarized
+endif
+highlight! link DiffText MatchParen

@@ -23,7 +23,7 @@
 	path = bundle/vim-multiple-cursors
 	url = git@github.com:terryma/vim-multiple-cursors.git
 [submodule "bundle/vim-latex"]
-	path = bundle/vim-latex
+	path = bundle/vim-latex~
 	url = https://github.com/vim-latex/vim-latex.git
 [submodule "bundle/vim-unimpaired"]
 	path = bundle/vim-unimpaired
@@ -37,3 +37,9 @@
 [submodule "bundle/vim-obsession"]
 	path = bundle/vim-obsession
 	url = git://github.com/tpope/vim-obsession.git
+[submodule "bundle/OmniCppComplete"]
+	path = bundle/OmniCppComplete
+	url = https://github.com/vim-scripts/OmniCppComplete.git
+[submodule "bundle/ShowFunc.vim"]
+	path = bundle/ShowFunc.vim
+	url = https://github.com/vim-scripts/ShowFunc.vim.git
