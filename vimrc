@@ -70,6 +70,9 @@ com! DiffSaved call s:DiffWithSaved()
 " autoread mode
 set autoread
 
+" incremental search mode
+set incsearch
+
 " shortcut to scroll inactive split window
 nmap <a-j> <c-w>w<c-e><c-w>w
 nmap <a-k> <c-w>w<c-y><c-w>w
