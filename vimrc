@@ -33,6 +33,12 @@ let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
 
+" Cmdline Complete
+set wcm=<C-E>
+cmap <expr> <TAB> (getcmdtype() == '/') ? "\<Plug>CmdlineCompleteForward" : "\<C-E>"
+"cmap <S-TAB> <Plug>CmdlineCompleteBackward
+"cnoremap <TAB> <Plug>CmdlineCompleteForward
+
 " ctrlp setup
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
