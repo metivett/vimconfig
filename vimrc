@@ -12,10 +12,16 @@ vmap <C-space> <Plug>IMAP_JumpForward
 autocmd Filetype tex setlocal tw=80
 
 " command-t options
-nnoremap <silent> <Leader>j :CommandTTag<CR>
-nnoremap <silent> <Leader>p :CommandT %:p:h<CR>
+"nnoremap <silent> <Leader>j :CommandTTag<CR>
+"nnoremap <silent> <Leader>p :CommandT %:p:h<CR>
 let g:CommandTMaxFiles=50000
 let g:CommandTTraverseSCM='dir'
+
+" ctrlp options
+nnoremap <silent> <Leader>j :CtrlPTag<CR>
+nnoremap <silent> <Leader>p :CtrlP %:p:h<CR>
+nnoremap <silent> <leader>t :CtrlP<CR>
+let g:ctrlp_max_height=50
 
 " look for tags file
 set tags=tags;/
