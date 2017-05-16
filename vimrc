@@ -62,6 +62,8 @@ set hidden
 
 " map F5 to manage buffers
 nnoremap <F5> :buffers<CR>:buffer<Space>
+" Bbye (Bdelete) mappings
+nnoremap <Leader>q :Bdelete<CR>
 
 " See unsaved changes
 function! s:DiffWithSaved()
@@ -87,6 +89,9 @@ nmap <a-k> <c-w>w<c-y><c-w>w
 " S-Enter to ✠
 inoremap ✠ <C-O>O
 inoremap <S-CR> <C-O>O
+
+" add < and > to matched pairs
+set matchpairs+=<:>
 
 " colortheme
 syntax enable
