@@ -52,3 +52,6 @@
 [submodule "bundle/CmdlineComplete"]
 	path = bundle/CmdlineComplete
 	url = https://github.com/vim-scripts/CmdlineComplete.git
+[submodule "bundle/vim-bbye"]
+	path = bundle/vim-bbye
+	url = https://github.com/moll/vim-bbye.git
