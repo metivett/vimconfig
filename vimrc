@@ -18,9 +18,10 @@ let g:CommandTMaxFiles=50000
 let g:CommandTTraverseSCM='dir'
 
 " ctrlp options
+nnoremap <silent> <leader>t :CtrlP<CR>
 nnoremap <silent> <Leader>j :CtrlPTag<CR>
 nnoremap <silent> <Leader>p :CtrlP %:p:h<CR>
-nnoremap <silent> <leader>t :CtrlP<CR>
+nnoremap <silent> <Leader>b :CtrlPBuffer<CR>
 let g:ctrlp_max_height=50
 
 " look for tags file
