@@ -56,6 +56,16 @@ set wildmenu
 " show line numbers
 set number
 
+" status line
+set statusline+=%-03.4n                      " buffer number
+set statusline+=%f                           " filename
+set statusline+=%h%m%r%w                     " status flags
+set statusline+=\[%{strlen(&ft)?&ft:'none'}] " file type
+set statusline+=%=                           " right align remainder
+set statusline+=0x%-8B                       " character value
+set statusline+=%-14(%l,%c%V%)               " line, character
+set statusline+=%<%P                         " file position
+
 " tab management
 set expandtab
 set shiftwidth=4
@@ -109,3 +119,6 @@ if &diff
     colorscheme solarized
 endif
 highlight! link DiffText MatchParen
+
+" remove bell
+set visualbell t_vb= 
