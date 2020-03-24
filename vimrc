@@ -3,6 +3,8 @@ execute pathogen#infect()
 let NERDTreeHijackNetrw=1
 filetype plugin on
 
+let VIMRCDIR = fnamemodify( expand("$MYVIMRC"), ":p:h" )
+
 " vim-latex options
 let g:tex_flavor='latex'
 set grepprg=grep\ -nH\ $*
@@ -23,6 +25,8 @@ let g:Tex_IgnoredWarnings =
     \'Citation %.%# undefined'."\n".
     \'Double space found.'."\n"
 let g:Tex_IgnoreLevel = 6
+let g:Tex_CustomTemplateDirectory = VIMRCDIR.'/ftplugin/latex-suite/templates/'.','
+            \ .VIMRCDIR.'/bundle/vim-latex/ftplugin/latex-suite/templates/'
 
 " command-t options
 "nnoremap <silent> <Leader>j :CommandTTag<CR>
