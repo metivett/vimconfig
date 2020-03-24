@@ -7,9 +7,22 @@ filetype plugin on
 let g:tex_flavor='latex'
 set grepprg=grep\ -nH\ $*
 imap <C-space> <Plug>IMAP_JumpForward
+autocmd VimEnter * imap <buffer> <C-space> <Plug>IMAP_JumpForward
 nmap <C-space> <Plug>IMAP_JumpForward
 vmap <C-space> <Plug>IMAP_JumpForward
 autocmd Filetype tex setlocal tw=80
+let g:Tex_IgnoredWarnings = 
+    \'Underfull'."\n".
+    \'Overfull'."\n".
+    \'specifier changed to'."\n".
+    \'You have requested'."\n".
+    \'Label(s) may have changed.'."\n".
+    \'LaTeX Font Warning:'."\n".
+    \'Missing number, treated as zero.'."\n".
+    \'There were undefined references'."\n".
+    \'Citation %.%# undefined'."\n".
+    \'Double space found.'."\n"
+let g:Tex_IgnoreLevel = 6
 
 " command-t options
 "nnoremap <silent> <Leader>j :CommandTTag<CR>
@@ -23,7 +36,12 @@ nnoremap <silent> <Leader>j :CtrlPTag<CR>
 nnoremap <silent> <Leader>p :CtrlP %:p:h<CR>
 nnoremap <silent> <Leader>b :CtrlPBuffer<CR>
 let g:ctrlp_max_height=50
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
 
+" ShowFunc ctags
+let g:showfuncctagsbin="/opt/local/bin/ctags"
 " look for tags file
 set tags=tags;/
 set tags+=~/.vim/tags/cpp
