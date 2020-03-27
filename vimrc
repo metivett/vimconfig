@@ -13,6 +13,7 @@ autocmd VimEnter * imap <buffer> <C-space> <Plug>IMAP_JumpForward
 nmap <C-space> <Plug>IMAP_JumpForward
 vmap <C-space> <Plug>IMAP_JumpForward
 autocmd Filetype tex setlocal tw=80
+let g:Tex_ViewRule_pdf = 'Skim'
 let g:Tex_IgnoredWarnings = 
     \'Underfull'."\n".
     \'Overfull'."\n".
