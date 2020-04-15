@@ -28,6 +28,7 @@ let g:Tex_IgnoredWarnings =
 let g:Tex_IgnoreLevel = 6
 let g:Tex_CustomTemplateDirectory = VIMRCDIR.'/ftplugin/latex-suite/templates/'.','
             \ .VIMRCDIR.'/bundle/vim-latex/ftplugin/latex-suite/templates/'
+let g:Tex_GotoError = 0
 
 " command-t options
 "nnoremap <silent> <Leader>j :CommandTTag<CR>
