@@ -5,6 +5,11 @@ filetype plugin on
 
 let VIMRCDIR = fnamemodify( expand("$MYVIMRC"), ":p:h" )
 
+" FZF plugin
+set rtp+=/opt/local/share/fzf/vim
+nnoremap <silent> <leader>g :Rg<CR>
+nnoremap <silent> <leader>gw :Rg <C-R><C-W><CR>
+
 " vim-latex options
 let g:tex_flavor='latex'
 set grepprg=grep\ -nH\ $*
@@ -42,6 +47,8 @@ nnoremap <silent> <leader>t :CtrlP<CR>
 nnoremap <silent> <Leader>j :CtrlPTag<CR>
 nnoremap <silent> <Leader>p :CtrlP %:p:h<CR>
 nnoremap <silent> <Leader>b :CtrlPBuffer<CR>
+nnoremap <silent> <Leader>k :CtrlPQuickfix<CR>
+nnoremap <silent> <Leader>l :CtrlPLine<CR>
 let g:ctrlp_max_height=50
 if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
