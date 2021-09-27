@@ -1,6 +1,5 @@
 " enable pathogen
 execute pathogen#infect()
-let NERDTreeHijackNetrw=1
 filetype plugin on
 
 let VIMRCDIR = fnamemodify( expand("$MYVIMRC"), ":p:h" )
@@ -36,12 +35,6 @@ let g:Tex_CustomTemplateDirectory = VIMRCDIR.'/ftplugin/latex-suite/templates/'.
             \ .VIMRCDIR.'/bundle/vim-latex/ftplugin/latex-suite/templates/'
 let g:Tex_GotoError = 0
 
-" command-t options
-"nnoremap <silent> <Leader>j :CommandTTag<CR>
-"nnoremap <silent> <Leader>p :CommandT %:p:h<CR>
-let g:CommandTMaxFiles=50000
-let g:CommandTTraverseSCM='dir'
-
 " ctrlp options
 nnoremap <silent> <leader>t :CtrlP<CR>
 nnoremap <silent> <Leader>j :CtrlPTag<CR>
@@ -53,6 +46,8 @@ let g:ctrlp_max_height=50
 if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
+" ctrlp setup
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " ShowFunc ctags
 let g:showfuncctagsbin="/opt/local/bin/ctags"
@@ -77,9 +72,6 @@ set wcm=<C-E>
 cmap <expr> <TAB> (getcmdtype() == '/') ? "\<Plug>CmdlineCompleteForward" : "\<C-E>"
 "cmap <S-TAB> <Plug>CmdlineCompleteBackward
 "cnoremap <TAB> <Plug>CmdlineCompleteForward
-
-" ctrlp setup
-set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " bash-like tab completion
 set wildmode=longest,list,full
