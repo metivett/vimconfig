@@ -54,6 +54,7 @@
 [submodule "bundle/rainbow_csv"]
 	path = bundle/rainbow_csv
 	url = https://github.com/mechatroner/rainbow_csv.git
+        ignore = untracked
 [submodule "bundle/vim-airline"]
 	path = bundle/vim-airline
 	url = https://github.com/vim-airline/vim-airline
