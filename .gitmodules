@@ -61,3 +61,6 @@
 [submodule "bundle/fzf.vim"]
 	path = bundle/fzf.vim
 	url = https://github.com/junegunn/fzf.vim.git
+[submodule "bundle/vim-visual-multi"]
+	path = bundle/vim-visual-multi
+	url = https://github.com/mg979/vim-visual-multi
