@@ -64,6 +64,3 @@
 [submodule "bundle/nerdcommenter"]
 	path = bundle/nerdcommenter
 	url = https://github.com/preservim/nerdcommenter
-[submodule "bundle/vim-table-mode"]
-	path = bundle/vim-table-mode
-	url = git@github.com:dhruvasagar/vim-table-mode.git
