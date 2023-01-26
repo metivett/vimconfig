@@ -9,30 +9,30 @@
 	url = https://github.com/ctrlpvim/ctrlp.vim
 [submodule "bundle/vim-surround"]
 	path = bundle/vim-surround
-	url = git://github.com/tpope/vim-surround.git
+	url = https://github.com/tpope/vim-surround.git
 [submodule "bundle/vim-latex"]
 	path = bundle/vim-latex
 	url = https://github.com/vim-latex/vim-latex.git
 [submodule "bundle/vim-unimpaired"]
 	path = bundle/vim-unimpaired
-	url = git://github.com/tpope/vim-unimpaired.git
+	url = https://github.com/tpope/vim-unimpaired.git
         ignore = untracked
 [submodule "bundle/julia-vim"]
 	path = bundle/julia-vim
-	url = git://github.com/JuliaLang/julia-vim.git
+	url = https://github.com/JuliaEditorSupport/julia-vim
 [submodule "bundle/vim-eunuch"]
 	path = bundle/vim-eunuch
-	url = git://github.com/tpope/vim-eunuch.git
+	url = https://github.com/tpope/vim-eunuch
         ignore = untracked
 [submodule "bundle/vim-obsession"]
 	path = bundle/vim-obsession
-	url = git://github.com/tpope/vim-obsession.git
+	url = https://github.com/tpope/vim-obsession.git
 [submodule "bundle/OmniCppComplete"]
 	path = bundle/OmniCppComplete
 	url = https://github.com/vim-scripts/OmniCppComplete.git
 [submodule "bundle/vim-fugitive"]
 	path = bundle/vim-fugitive
-	url = git://github.com/tpope/vim-fugitive.git
+	url = https://github.com/tpope/vim-fugitive
 [submodule "bundle/vim-easy-align"]
 	path = bundle/vim-easy-align
 	url = https://github.com/junegunn/vim-easy-align.git
@@ -47,7 +47,7 @@
 	url = https://github.com/tell-k/vim-autopep8.git
 [submodule "bundle/speeddating"]
 	path = bundle/speeddating
-	url = https://tpope.io/vim/speeddating.git
+	url = https://github.com/tpope/vim-speeddating
 [submodule "bundle/rainbow_csv"]
 	path = bundle/rainbow_csv
 	url = https://github.com/mechatroner/rainbow_csv.git
