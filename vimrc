@@ -6,7 +6,7 @@ let VIMRCDIR = fnamemodify( expand("$MYVIMRC"), ":p:h" )
 
 " FZF plugin
 set rtp+=/opt/local/share/fzf/vim
-nnoremap <silent> <leader>g :Rg<CR>
+nnoremap <silent> <leader>gg :Rg<CR>
 nnoremap <silent> <leader>gw :Rg <C-R><C-W><CR>
 
 " vim-latex options
@@ -43,7 +43,11 @@ nnoremap <silent> <Leader>b :CtrlPBuffer<CR>
 nnoremap <silent> <Leader>k :CtrlPQuickfix<CR>
 nnoremap <silent> <Leader>l :CtrlPLine<CR>
 let g:ctrlp_max_height=50
-if executable('ag')
+if executable('rg')
+  set grepprg=rg\ --color=never
+  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+  let g:ctrlp_use_caching = 0
+elseif executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 " ctrlp setup
