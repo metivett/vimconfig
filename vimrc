@@ -81,8 +81,13 @@ cmap <expr> <TAB> (getcmdtype() == '/') ? "\<Plug>CmdlineCompleteForward" : "\<C
 set wildmode=longest,list,full
 set wildmenu
 
-" show line numbers
+" show line numbers (hybrid or absolute)
 set number
+augroup numbertoggle
+    autocmd!
+    autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
+    autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
+augroup END
 
 " status line
 set statusline+=%-03.4n                      " buffer number
@@ -134,6 +139,10 @@ nmap <a-k> <c-w>w<c-y><c-w>w
 " S-Enter to ✠
 inoremap ✠ <C-O>O
 inoremap <S-CR> <C-O>O
+
+" terminal mappings
+" ESC-ESC -> normal mode
+tnoremap <Esc><Esc> <C-W>N
 
 " add < and > to matched pairs
 set matchpairs+=<:>
