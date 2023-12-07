@@ -128,6 +128,10 @@ com! DiffSaved call s:DiffWithSaved()
 " autoread mode
 set autoread
 
+" highlight search results
+set hlsearch
+nnoremap <silent> <esc> <esc>:noh<CR>
+
 " incremental search mode
 set incsearch
 
