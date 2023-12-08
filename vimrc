@@ -1,4 +1,5 @@
 " enable pathogen
+let g:pathogen_disabled = []
 execute pathogen#infect()
 filetype plugin on
 
@@ -146,7 +147,7 @@ inoremap <S-CR> <C-O>O
 
 " terminal mappings
 " ESC-ESC -> normal mode
-tnoremap <Esc><Esc> <C-W>N
+tnoremap <Esc><Esc> <Esc><C-W>N
 
 " add < and > to matched pairs
 set matchpairs+=<:>
