@@ -1,14 +1,39 @@
-" enable pathogen
-let g:pathogen_disabled = []
-execute pathogen#infect()
+" Plugins
+if !has('nvim')
+    " Vim plugins
+    " Pathogen plugin manager
+    let g:pathogen_disabled = []
+    "call add(g:pathogen_disabled, 'ctrlp.vim')
+    execute pathogen#infect()
+    " Key mappings
+    "" FZF plugin
+    set rtp+=/opt/local/share/fzf/vim
+    nnoremap <silent> <leader>gg :Rg<CR>
+    nnoremap <silent> <leader>gw :Rg <C-R><C-W><CR>
+    "" Ctrlp options
+    nnoremap <silent> <leader>t :CtrlP<CR>
+    nnoremap <silent> <Leader>j :CtrlPTag<CR>
+    nnoremap <silent> <Leader>p :CtrlP %:p:h<CR>
+    nnoremap <silent> <Leader>b :CtrlPBuffer<CR>
+    nnoremap <silent> <Leader>k :CtrlPQuickfix<CR>
+    nnoremap <silent> <Leader>l :CtrlPLine<CR>
+    let g:ctrlp_max_height=50
+    if executable('rg')
+      set grepprg=rg\ --color=never
+      let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+      let g:ctrlp_use_caching = 0
+    elseif executable('ag')
+      let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+    endif
+
+endif
+
 filetype plugin on
 
 let VIMRCDIR = fnamemodify( expand("$MYVIMRC"), ":p:h" )
 
-" FZF plugin
-set rtp+=/opt/local/share/fzf/vim
-nnoremap <silent> <leader>gg :Rg<CR>
-nnoremap <silent> <leader>gw :Rg <C-R><C-W><CR>
+" let backspace erase everything in insert mode
+set backspace=indent,eol,start
 
 " vim-latex options
 let g:tex_flavor='latex'
@@ -36,23 +61,6 @@ let g:Tex_CustomTemplateDirectory = VIMRCDIR.'/ftplugin/latex-suite/templates/'.
             \ .VIMRCDIR.'/bundle/vim-latex/ftplugin/latex-suite/templates/'
 let g:Tex_GotoError = 0
 
-" ctrlp options
-nnoremap <silent> <leader>t :CtrlP<CR>
-nnoremap <silent> <Leader>j :CtrlPTag<CR>
-nnoremap <silent> <Leader>p :CtrlP %:p:h<CR>
-nnoremap <silent> <Leader>b :CtrlPBuffer<CR>
-nnoremap <silent> <Leader>k :CtrlPQuickfix<CR>
-nnoremap <silent> <Leader>l :CtrlPLine<CR>
-let g:ctrlp_max_height=50
-if executable('rg')
-  set grepprg=rg\ --color=never
-  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
-  let g:ctrlp_use_caching = 0
-elseif executable('ag')
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-endif
-" ctrlp setup
-set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " ShowFunc ctags
 let g:showfuncctagsbin="/opt/local/bin/ctags"
@@ -74,7 +82,7 @@ set completeopt=menuone,menu,longest,preview
 
 " Cmdline Complete
 set wcm=<C-E>
-cmap <expr> <TAB> (getcmdtype() == '/') ? "\<Plug>CmdlineCompleteForward" : "\<C-E>"
+"cmap <expr> <TAB> (getcmdtype() == '/') ? "\<Plug>CmdlineCompleteForward" : "\<C-E>"
 "cmap <S-TAB> <Plug>CmdlineCompleteBackward
 "cnoremap <TAB> <Plug>CmdlineCompleteForward
 
@@ -147,12 +155,13 @@ inoremap <S-CR> <C-O>O
 
 " terminal mappings
 " ESC-ESC -> normal mode
-tnoremap <Esc><Esc> <Esc><C-W>N
+tnoremap <Esc><Esc> <Esc><Esc><C-W>N
 
 " add < and > to matched pairs
 set matchpairs+=<:>
 
 " colortheme
+set rtp^=~/.vim/bundle/vim-colors-solarized
 syntax enable
 set background=dark
 colorscheme solarized
